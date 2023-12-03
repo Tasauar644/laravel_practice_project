@@ -7,6 +7,9 @@
     <title>Users Table</title>
 </head>
 <body>
+<a href="{{url('/create')}}"> <button type="button" style="float:right;" class="btn btn-primary">Add user</button></a>
+
+
     <table class="table table-striped">
         <thead>
           <tr>
@@ -24,14 +27,13 @@
             <td>{{$user->id}}</td>
             <td>{{$user->name}}</td>
             <td>{{$user->email}}</td>
-            <td>{{$user->created_at}}</td>
-            <td>{{$user->updated_at}}</td>
-          
+            <td>{{date("d F,Y, h:i:A",strtotime($user->created_at))}}</td>
+            <td>{{date("d F,Y, h:i:A",strtotime($user->updated_at))}}</td>
           </tr>
           @endforeach
        
         </tbody>
       </table>
-    
+
 </body>
 </html>

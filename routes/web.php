@@ -22,5 +22,7 @@ Route::get("/", function () {
 
 Route::get("/getuserdata",[UserController::class,'manage'] );
 Route::get("/getuserpost",[PostController::class,'index'] );
+Route::get('/create',[UserController::class,'insert'] );
+Route::post('/create',[UserController::class,'store'] );
 
 

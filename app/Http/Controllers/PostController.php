@@ -11,7 +11,6 @@ class PostController extends Controller
 
         $posts = Post::with('user')->get();
 
-
         return view('postTableView', compact('posts'));
     }
 }

@@ -26,8 +26,8 @@
             @foreach($posts as $post )
             <tr>
                 <td>{{$post->id}}</td>
-                <td>{{$post->created_at}}</td>
-                <td>{{$post->updated_at}}</td>
+                <td>{{date("d F,Y, H:i:A",strtotime($post->created_at))}}</td>
+                <td>{{date("d F,Y, H:i:A",strtotime($post->updated_at))}}</td>
                 <td>{{$post->title}}</td>
                 <td>{{$post->description}}</td> 
                 <td>{{$post->user->name}}</td>
