@@ -18,6 +18,8 @@
             <th scope="col">email</th>
             <th scope="col">created time</th>
             <th scope="col">updated time</th>
+            <th scope="col">Actions</th>
+
           </tr>
         </thead>
         <tbody>
@@ -29,6 +31,10 @@
             <td>{{$user->email}}</td>
             <td>{{date("d F,Y, h:i:A",strtotime($user->created_at))}}</td>
             <td>{{date("d F,Y, h:i:A",strtotime($user->updated_at))}}</td>
+            <td>
+              <a href="{{route('user.delete',['id'=>$user->id])}}"><button type="button" class="btn btn-danger">Delete</button></a>
+              <a href="{{route('user.edit',['id'=>$user->id])}}"><button type="button" class="btn btn-primary">Edit</button></a>
+            </td>
           </tr>
           @endforeach
        
